@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { View, StyleSheet } from 'react-native';
-import MapView from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { MapStyle } from '../theme/mapStyle';
 import { MapHeader } from '../components/MapComponents/MapHeader.tsx';
 import { CustomMarker } from '../components/MapComponents/CustomMarker.tsx';
@@ -76,6 +76,7 @@ export const MapScreen = () => {
     <View style={styles.container}>
       <MapHeader />
       <MapView
+        provider={PROVIDER_GOOGLE}
         ref={mapRef}
         style={styles.map}
         customMapStyle={MapStyle}
